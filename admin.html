@@ -143,9 +143,11 @@
 
         }
         
-        let diagramCode = 'graph TD\n';
-        let nodeIds = new Set();
+        let diagramCode, nodeIds;
         async function genereCartoArgument(e,arg){
+
+            diagramCode = 'flowchart LR\n';
+            nodeIds = new Set();
 
             // Construire le diagramme pour cet argument
             await buildMermaidDiagram(arg);
